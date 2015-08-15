@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="main">
+<head>
+<!-- Start Angular -->
+<script src="app/angular/jquery.js"></script>
+<script src="app/angular/angular.min.js"></script>
+<!-- End Angular -->
+
+<!-- Start Bootstrap -->
+<script src="app/bootstrap/js/bootstrap.min.js"></script>
+<script src="app/bootstrap/js/ui-bootstrap-tpls-0.13.3.min.js"></script>
+<link href="app/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="app/bootstrap/css/bootstrap-responsive.min.css"
+	rel="stylesheet">
+<!-- End Bootstrap -->
+
+<!-- Start Scripts -->
+<script src="app/js/main.js"></script>
+<!-- End Scripts -->
+
+<title>API Challege</title>
+</head>
+<body>
+	<div ng-controller="MainCtrl">
+		<button type="button" class="btn btn-warning"
+			ng-click="getUserIPInfo()">Pull Data</button>
+
+		<div class="btn-group" dropdown>
+			<button id="single-button" type="button" class="btn btn-primary"
+				dropdown-toggle>
+				{{region}} <span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
+				<li role="menuitem"><a href="" ng-click="setRegion('BR')">BR</a></li>
+				<li role="menuitem"><a href="" ng-click="setRegion('EUNE')">EUNE</a></li>
+				<li role="menuitem"><a href="" ng-click="setRegion('EUW')">EUW</a></li>
+				<li role="menuitem"><a href="" ng-click="setRegion('KR')">KR</a></li>
+				<li role="menuitem"><a href="" ng-click="setRegion('LAN')">LAN</a></li>
+				<li role="menuitem"><a href="" ng-click="setRegion('LAS')">LAS</a></li>
+				<li role="menuitem"><a href="" ng-click="setRegion('NA')">NA</a></li>
+				<li role="menuitem"><a href="" ng-click="setRegion('OCE')">OCE</a></li>
+				<li role="menuitem"><a href="" ng-click="setRegion('RU')">RU</a></li>
+				<li role="menuitem"><a href="" ng-click="setRegion('TR')">TR</a></li>
+			</ul>
+		</div>
+
+		<div class="btn-group">
+			<label class="btn btn-success" ng-model="gameType" btn-radio="'RANKED_SOLO'">Ranked</label> 
+			<label class="btn btn-success" ng-model="gameType" btn-radio="'NORMAL_5X5'">Normal</label>
+		</div>
+
+		<div ng-show="ipinfo != null">
+			<div ng-repeat="info in ipinfo">
+				<p>{{items}}</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -4,15 +4,19 @@
 <!-- Start Angular -->
 <script src="app/angular/jquery.js"></script>
 <script src="app/angular/angular.min.js"></script>
+<script src="app/angular/Chart.min.js"></script>
+<script src="app/angular/angular-chart.js/angular-chart.min.js"></script>
 <!-- End Angular -->
 
 <!-- Start Bootstrap -->
 <script src="app/bootstrap/js/bootstrap.min.js"></script>
 <script src="app/bootstrap/js/ui-bootstrap-tpls-0.13.3.min.js"></script>
 <link href="app/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="app/angular/angular-chart.js/angular-chart.css" rel="stylesheet">
 <link href="app/bootstrap/css/bootstrap-responsive.min.css"
 	rel="stylesheet">
 <!-- End Bootstrap -->
+
 
 <!-- Start Scripts -->
 <script src="app/js/main.js"></script>
@@ -48,6 +52,8 @@
 			<label class="btn btn-success" ng-model="gameType" btn-radio="'RANKED_SOLO'">Ranked</label> 
 			<label class="btn btn-success" ng-model="gameType" btn-radio="'NORMAL_5X5'">Normal</label>
 		</div>
+		
+		<canvas id="radar" class="chart chart-radar" data="data" labels="labels"></canvas> 
 
 		<div ng-show="ipinfo != null">
 			<div ng-repeat="info in ipinfo">
